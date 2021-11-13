@@ -2,8 +2,6 @@ package service;
 
 import api.ProductService;
 import entity.Product;
-import entity.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +11,10 @@ public class ProductServiceImpl implements ProductService {
 
     public ProductServiceImpl(List<Product> products) {
         this.products = products;
+    }
+
+    public ProductServiceImpl() {
+        products = new ArrayList<>();
     }
 
     public List<Product> getAllProducts() {

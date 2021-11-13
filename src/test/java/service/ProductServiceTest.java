@@ -57,9 +57,8 @@ public class ProductServiceTest {
     @Test
     public void testGetNumberOfZeroProduct() {
         //is
-        List<Product> products = new ArrayList<>();
         //then
-        ProductServiceImpl productService = new ProductServiceImpl(products);
+        ProductServiceImpl productService = new ProductServiceImpl();
         //expected
         Assert.assertEquals(0, productService.getNumberOfProducts());
     }
