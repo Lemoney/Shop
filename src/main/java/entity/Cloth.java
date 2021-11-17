@@ -20,9 +20,11 @@ public class Cloth extends Product {
 
     @Override
     public String toString() {
-        return "entity.Cloth{" +
-                "size='" + size + '\'' +
-                ", material='" + material + '\'' +
-                '}';
+        return super.toString() +
+                size + "#" +
+                material + "#";
+    }
+    public String toShow() {
+        return super.toShow() + "\n Size: " + size + ";\n Material: " + material + ";";
     }
 }

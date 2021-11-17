@@ -20,9 +20,11 @@ public class Boots extends Product {
 
     @Override
     public String toString() {
-        return "entity.Boots{" +
-                "size=" + size +
-                ", isNaturalSkin=" + isNaturalSkin +
-                '}';
+        return super.toString() +
+                size +
+                "#" + isNaturalSkin + "#";
+    }
+    public String toShow() {
+        return super.toShow() + "\n Size: " + size + ";\n Natural skin: " + isNaturalSkin + ";";
     }
 }

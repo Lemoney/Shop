@@ -51,13 +51,16 @@ public class Product {
 
     @Override
     public String toString() {
-        return "entity.Product{" +
-                "id=" + id +
-                ", productName='" + productName + '\'' +
-                ", price=" + price +
-                ", weight=" + weight +
-                ", color='" + color + '\'' +
-                ", productCount=" + productCount +
-                '}';
+        return id +
+                "#" + productName +
+                "#" + price +
+                "#" + weight +
+                "#" + color +
+                "#" + productCount +
+                "#";
+    }
+    public String toShow() {
+        return "ID: " + id + ";\n Product name: " + productName + ";\n Price: " + price +
+                ";\n Weight: " + weight + ";\n Color: " + color + ";\n Products available: " + productCount + ";";
     }
 }
