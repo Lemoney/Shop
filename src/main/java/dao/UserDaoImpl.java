@@ -59,6 +59,10 @@ public class UserDaoImpl implements UserDao {
         }
         return null;
     }
+    @Override
+    public boolean isUserByLoginExist(String login) throws IOException {
+        return getUserByLogin(login) != null;
+    }
 
     @Override
     public User getUserById(Long userId) throws IOException {
@@ -84,4 +88,6 @@ public class UserDaoImpl implements UserDao {
         users.removeIf(user -> user.getId() == id);
         saveUsers(users);
     }
+
+
 }

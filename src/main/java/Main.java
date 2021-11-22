@@ -1,36 +1,34 @@
 
+import dao.ProductDaoImpl;
 import dao.UserDaoImpl;
+import entity.Boots;
+import entity.Product;
 import entity.User;
+import exception.UserLoginAlreadyExistException;
+import exception.UserShortLengthLoginException;
+import exception.UserShortLengthPasswordException;
+import validator.UserValidator;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-//        User klimek = new User(1L, "Klimek", "admin");
-//        User kuba = new User(2L, "kuba", "gosc");
+    public static void main(String[] args) throws IOException, UserShortLengthLoginException, UserLoginAlreadyExistException, UserShortLengthPasswordException {
+        User klimek = new User(1L, "Klimek", "admin1234");
+        User kuba = new User(2L, "kuba", "gosc12345");
 
-//        try {
-//            UserDaoImpl userDao = new UserDaoImpl("colo.txt");
-//            userDao.removeUserByLogin("kuba");
-//            userDao.removeUserById(1L);
-//            userDao.removeUserById(1L);
-//            System.out.println(userDao.getAllUsers());
-//        } catch (FileNotFoundException e) {
-//            System.out.println("Nie ma takiego pliku, co ty se myslis");
-//        }
-        String name = "Klimek";
-        try {
-            System.out.println(name.length());
-        } catch (NullPointerException e) {
-            System.out.println("Null pointer exception");
-        } finally {
-            System.out.println("To wyświetlam i tak.");
-        }
+//        Product nike = new Boots(1L, "Nike", 250, 50, "black", 5, 43, false);
+//        Product armani = new Boots(2L, "Armani", 300, 70, "black", 3, 42, true);
+//
+//        ProductDaoImpl productDao = new ProductDaoImpl("colo.txt");
+//        productDao.saveProduct(nike);
+//        System.out.println(productDao.getAllProducts());
+
+        UserDaoImpl userDao = new UserDaoImpl("users.txt");
+        //userDao.saveUser(klimek);
+        //userDao.getUserByLogin("kuba");
+
+        UserValidator.getInstance().isValidate(kuba);
+
     }
 
 

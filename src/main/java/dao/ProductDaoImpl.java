@@ -4,6 +4,7 @@ import api.ProductDao;
 import entity.Boots;
 import entity.Cloth;
 import entity.Product;
+import utils.FileUtils;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,8 +13,9 @@ import java.util.List;
 public class ProductDaoImpl implements ProductDao {
     private final String fileName;
 
-    public ProductDaoImpl(String fileName) {
+    public ProductDaoImpl(String fileName) throws IOException {
         this.fileName = fileName;
+        FileUtils.createNewFile(fileName);
     }
 
     @Override
